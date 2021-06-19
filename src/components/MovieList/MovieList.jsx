@@ -15,8 +15,10 @@ function MovieList() {
     }, []);
 
     //create a function that sends the user to the /details page
-    const getDetails = () => {
-        //send the user to the details page
+    const captureDetails = (movie) => {
+        //capture the movie that the user clicked on and send it to a reducer
+        dispatch({type: 'ALL_DETAILS', payload: {movie}})
+        //send the user to the details page of movie that was clicked on 
         history.push('/details');
     }
 
@@ -28,7 +30,7 @@ function MovieList() {
                     return (
                         <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img onClick={getDetails} src={movie.poster} alt={movie.title}/>
+                            <img onClick={ () => captureDetails(movie)} src={movie.poster} alt={movie.title}/>
                         </div>
                     );
                 })}
