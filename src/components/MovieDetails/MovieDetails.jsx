@@ -6,7 +6,9 @@ function MovieDetails () {
 
     //declare dispatch
     const dispatch = useDispatch();
-    //bring in 
+    //bring in genres reducer
+    const movies = useSelector( store => store.genres);
+
 
     // useEffect(() => {
     //     dispatch({type: 'ALL_DETAILS'});
@@ -16,7 +18,7 @@ function MovieDetails () {
 
 
 return (
-    <p> hello </p>
+    <p> {movies} </p>
 )
 
 

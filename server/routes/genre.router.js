@@ -4,7 +4,8 @@ const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
   // Add query to get all genres
-  res.sendStatus(500)
+console.log('hello from the router');
+  // res.sendStatus(500)
 });
 
 module.exports = router;

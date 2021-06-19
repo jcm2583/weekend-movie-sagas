@@ -17,7 +17,7 @@ function MovieList() {
     //create a function that sends the user to the /details page
     const captureDetails = (movie) => {
         //capture the movie that the user clicked on and send it to a reducer
-        dispatch({type: 'ALL_DETAILS', payload: {movie}})
+        dispatch({type: 'FETCH_DETAILS', payload: {movie}})
         //send the user to the details page of movie that was clicked on 
         history.push('/details');
     }
