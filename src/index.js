@@ -33,10 +33,11 @@ function* fetchAllMovies() {
 //create a function to get all the movie details
 function* fetchAllDetails (action) {
     let movie = action.payload;
-    console.log(movie.movie);
+    console.log(movie);
     try {
-        const response =  yield axios.get(`/api/genre/${movie.movie.id}`)
+        const response =  yield axios.get(`/api/genre/${movie.id}`)
         console.log(response.data);
+        yield put({type: 'SET_GENRES', payload: response.data});
     } catch (err) {
         console.log('Error in fetchAllDetails', err);
     }
