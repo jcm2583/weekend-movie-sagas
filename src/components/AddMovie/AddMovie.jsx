@@ -1,6 +1,6 @@
 import { useHistory } from 'react-router-dom';
-import {useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 function AddMovie() {
 
@@ -21,32 +21,43 @@ function AddMovie() {
     }
 
     //create a function that captures user input
-    
-    console.log(movieTitle);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('hi submit');
+        let movieObject = {
+            title: movieTitle,
+            poster: movieUrl,
+            description: movieDescription
+        }
+        console.log(movieObject);
+
+    }
+
+    console.log(movieGenre);
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
 
-            <input 
-            type="text" 
-            placeholder="Movie Title" 
-            onChange={(evt) => setMovieTitle(evt.target.value)} 
-            value-={movieTitle}/>
+            <input
+                type="text"
+                placeholder="Movie Title"
+                onChange={(evt) => setMovieTitle(evt.target.value)}
+                value={movieTitle} />
 
-            <input 
-            type="text" 
-            placeholder="Image URL" 
-            onChange={(evt) => setMovieUrl(evt.target.value)}
-            value={movieUrl}/>
+            <input
+                type="text"
+                placeholder="Image URL"
+                onChange={(evt) => setMovieUrl(evt.target.value)}
+                value={movieUrl} />
 
-            <input 
-            type="text" 
-            placeholder="Movie Description" 
-            onChange={(evt) => setMovieDescription(evt.target.value)} 
-            value={movieDescription}/>
-            
+            <input
+                type="text"
+                placeholder="Movie Description"
+                onChange={(evt) => setMovieDescription(evt.target.value)}
+                value={movieDescription} />
+
             <label htmlFor="genres">Movie Genre:</label>
-            <select name="genres" placeholder="Genres">
+            <select name="genres">
                 <option value="" disabled selected>Genres</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Animated">Animated</option>
@@ -64,7 +75,9 @@ function AddMovie() {
             </select>
 
             <button onClick={cancelAdd}>Cancel</button>
-            <button>Add Movie</button>
+            <button
+                type="submit">
+                Add Movie</button>
         </form>
     )
 }
