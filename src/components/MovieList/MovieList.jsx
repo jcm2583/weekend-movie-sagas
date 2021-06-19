@@ -22,9 +22,15 @@ function MovieList() {
         history.push('/details');
     }
 
+    //create a function that will take the user to the form page to add a movie
+    const formPage = () => {
+        history.push('/addMovie');
+    }
+
     return (
         <main>
             <h1>MovieList</h1>
+            <button onClick={formPage}>Add Movie</button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
