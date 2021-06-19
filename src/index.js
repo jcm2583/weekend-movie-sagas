@@ -30,10 +30,9 @@ function* fetchAllMovies() {
         
 }
 
-//create a function to get all the movie details
+//create a function to get all the movie details and genre types
 function* fetchAllDetails (action) {
     let movie = action.payload;
-    console.log(movie);
     try {
         const response =  yield axios.get(`/api/genre/${movie.id}`)
         console.log(response.data);
@@ -41,7 +40,6 @@ function* fetchAllDetails (action) {
     } catch (err) {
         console.log('Error in fetchAllDetails', err);
     }
-    // yield put ({type: 'SET_GENRES', payload: action.payload})
 }
 
 // Create sagaMiddleware
