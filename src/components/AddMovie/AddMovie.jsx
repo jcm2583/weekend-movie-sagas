@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import Select from '@material-ui/core/Select';
+import {Select, MenuItem} from '@material-ui/core';
 
 function AddMovie() {
 
@@ -77,22 +77,24 @@ function AddMovie() {
                 onChange={(evt) => setMovieDescription(evt.target.value)}
                 value={movieDescription} />
 
-            <label htmlFor="genres">Movie Genre:</label>
-            <Select name="genre_id" onChange={(evt) => setMovieGenre(evt.target.value)}>
-                <option value="" disabled selected>Genres</option>
-                <option value="1">Adventure</option>
-                <option value="2">Animated</option>
-                <option value="3">Biographical</option>
-                <option value="4">Comedy</option>
-                <option value="5">Disaster</option>
-                <option value="6">Drama</option>
-                <option value="7">Epic</option>
-                <option value="8">Fantasy</option>
-                <option value="9">Musical</option>
-                <option value="10">Romantic</option>
-                <option value="11">Science Fiction</option>
-                <option value="12">Space-Opera</option>
-                <option value="13">Superhero</option>
+            <Select 
+            style={{backgroundColor: "white", width: 150}}
+            value={movieGenre} displayEmpty
+            onChange={(evt) => setMovieGenre(evt.target.value)}>
+                <MenuItem value="" disabled>Select Genre</MenuItem>
+                <MenuItem value="1">Adventure</MenuItem>
+                <MenuItem value="2">Animated</MenuItem>
+                <MenuItem value="3">Biographical</MenuItem>
+                <MenuItem value="4">Comedy</MenuItem>
+                <MenuItem value="5">Disaster</MenuItem>
+                <MenuItem value="6">Drama</MenuItem>
+                <MenuItem value="7">Epic</MenuItem>
+                <MenuItem value="8">Fantasy</MenuItem>
+                <MenuItem value="9">Musical</MenuItem>
+                <MenuItem value="10">Romantic</MenuItem>
+                <MenuItem value="11">Science Fiction</MenuItem>
+                <MenuItem value="12">Space-Opera</MenuItem>
+                <MenuItem value="13">Superhero</MenuItem>
             </Select>
 
             <Button

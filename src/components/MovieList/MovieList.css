@@ -19,6 +19,11 @@ h3 span {
 .movies {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.spacing {
+    margin: 64px 32px;
 }
 
 

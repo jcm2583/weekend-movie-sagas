@@ -31,14 +31,14 @@ function MovieList() {
     return (
         <main>
             <h1><span>Welcome To The Gallery Of Movies</span></h1>
-            <h2><span>Click On A Movie To Learn More About It!</span></h2>
+            <h2><span>Click On A Movie To Learn More About It! No Spoilers!</span></h2>
             <Button variant="contained"onClick={formPage}>Add Movie</Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
+                        <div className="spacing" key={movie.id} >
                             <h3><span>{movie.title}</span></h3>
-                            <img class="border" onClick={ () => captureDetails(movie)} src={movie.poster} alt={movie.title}/>
+                            <img className="border" onClick={ () => captureDetails(movie)} src={movie.poster} alt={movie.title}/>
                         </div>
                     );
                 })}
