@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import './MovieDetails.css';
+import Button from '@material-ui/core/Button';
 
 function MovieDetails() {
 
@@ -20,11 +22,11 @@ function MovieDetails() {
         <div>
             {movies.map(movie => {
                 return (<div key={movie.id}>
-                    <h3>{movie.title}</h3>
+                    <h3 className="text-background">{movie.title}</h3>
                     <img src={movie.poster} alt={movie.title}></img>
-                    <h4>{movie.genre}</h4>
-                    <p>{movie.description}</p>
-                    <button onClick={goBack}>Back to List</button>
+                    <h4 className="text-background">{movie.genre}</h4>
+                    <p className="text-background">{movie.description}</p>
+                    <Button variant="contained" onClick={goBack}>Back to List</Button>
                 </div>
                 )
             })}

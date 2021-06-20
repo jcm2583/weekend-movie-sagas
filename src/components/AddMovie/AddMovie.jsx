@@ -1,6 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
 
 function AddMovie() {
 
@@ -28,7 +31,7 @@ function AddMovie() {
             title: movieTitle,
             poster: movieUrl,
             description: movieDescription,
-            genre_id: movieGenre 
+            genre_id: movieGenre
         }
         // dispatch object to saga
         dispatch({
@@ -50,26 +53,32 @@ function AddMovie() {
     return (
         <form onSubmit={handleSubmit}>
 
-            <input
+            <TextField
+                variant="filled"
+                style={{backgroundColor: "white", width: 300 }}
                 type="text"
-                placeholder="Movie Title"
+                label="Movie Title"
                 onChange={(evt) => setMovieTitle(evt.target.value)}
                 value={movieTitle} />
 
-            <input
+            <TextField
+                variant="filled"
+                style={{backgroundColor: "white", width: 300}}
                 type="text"
-                placeholder="Image URL"
+                label="Image URL"
                 onChange={(evt) => setMovieUrl(evt.target.value)}
                 value={movieUrl} />
 
-            <input
+            <TextField
+                variant="filled"
+                style={{backgroundColor: "white", width: 300}}
                 type="text"
-                placeholder="Movie Description"
+                label="Movie Description"
                 onChange={(evt) => setMovieDescription(evt.target.value)}
                 value={movieDescription} />
 
             <label htmlFor="genres">Movie Genre:</label>
-            <select name="genre_id" onChange={(evt) => setMovieGenre(evt.target.value)}>
+            <Select name="genre_id" onChange={(evt) => setMovieGenre(evt.target.value)}>
                 <option value="" disabled selected>Genres</option>
                 <option value="1">Adventure</option>
                 <option value="2">Animated</option>
@@ -84,12 +93,19 @@ function AddMovie() {
                 <option value="11">Science Fiction</option>
                 <option value="12">Space-Opera</option>
                 <option value="13">Superhero</option>
-            </select>
+            </Select>
 
-            <button onClick={cancelAdd}>Cancel</button>
-            <button
+            <Button
+                variant="contained"
+                onClick={cancelAdd}
+                >Cancel
+            </Button>
+
+            <Button
+                variant="contained"
                 type="submit">
-                Save</button>
+                Save
+            </Button>
         </form>
     )
 }

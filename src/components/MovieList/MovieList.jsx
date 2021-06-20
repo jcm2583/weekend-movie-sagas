@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import './MovieList.css'
+import Button from '@material-ui/core/Button';
 
 function MovieList() {
 
@@ -30,7 +31,7 @@ function MovieList() {
     return (
         <main>
             <h1>MovieList</h1>
-            <button onClick={formPage}>Add Movie</button>
+            <Button variant="contained"onClick={formPage}>Add Movie</Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (

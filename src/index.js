@@ -28,27 +28,27 @@ function* fetchAllMovies() {
     } catch {
         console.log('get all error');
     }
-        
+
 }
 
-//create a function to get all the movie details and genre types
-function* fetchAllDetails (action) {
+//create a function to get all the movie details and genre types per clicked on movie
+function* fetchAllDetails(action) {
     let movie = action.payload;
     try {
-        const response =  yield axios.get(`/api/genre/${movie.id}`)
+        const response = yield axios.get(`/api/genre/${movie.id}`)
         console.log(response.data);
-        yield put({type: 'SET_GENRES', payload: response.data});
+        yield put({ type: 'SET_GENRES', payload: response.data });
     } catch (err) {
         console.log('Error in fetchAllDetails', err);
     }
 }
 
 //create a function to add movie
-function* addMovie (action) {
+function* addMovie(action) {
     console.log(action.payload);
     try {
         yield axios.post('/api/movie', action.payload);
-        yield put ({type: 'FETCH_MOVIES'})
+        yield put({ type: 'FETCH_MOVIES' })
     } catch (err) {
         console.log('There was an error in addMovie', err);
     };
@@ -92,7 +92,7 @@ sagaMiddleware.run(rootSaga);
 ReactDOM.render(
     <React.StrictMode>
         <Provider store={storeInstance}>
-        <App />
+            <App />
         </Provider>
     </React.StrictMode>,
     document.getElementById('root')
