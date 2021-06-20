@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import {Select, MenuItem} from '@material-ui/core';
+import './AddMovie.css';
 
 function AddMovie() {
 
@@ -51,11 +52,13 @@ function AddMovie() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        
+    <div className="flex-container">  
 
+        <form onSubmit={handleSubmit}>
             <TextField
                 variant="filled"
-                style={{backgroundColor: "white", width: 300 }}
+                style={{backgroundColor: "white", width: 300, margin: "16px" }}
                 type="text"
                 label="Movie Title"
                 onChange={(evt) => setMovieTitle(evt.target.value)}
@@ -63,7 +66,7 @@ function AddMovie() {
 
             <TextField
                 variant="filled"
-                style={{backgroundColor: "white", width: 300}}
+                style={{backgroundColor: "white", width: 300, margin: "16px"}}
                 type="text"
                 label="Image URL"
                 onChange={(evt) => setMovieUrl(evt.target.value)}
@@ -71,14 +74,15 @@ function AddMovie() {
 
             <TextField
                 variant="filled"
-                style={{backgroundColor: "white", width: 300}}
+                multiline
+                style={{backgroundColor: "white", width: 300, margin: "16px"}}
                 type="text"
                 label="Movie Description"
                 onChange={(evt) => setMovieDescription(evt.target.value)}
                 value={movieDescription} />
 
-            <Select 
-            style={{backgroundColor: "white", width: 150}}
+            <Select
+            style={{backgroundColor: "white", width: 150, margin: "16px"}}
             value={movieGenre} displayEmpty
             onChange={(evt) => setMovieGenre(evt.target.value)}>
                 <MenuItem value="" disabled>Select Genre</MenuItem>
@@ -96,19 +100,23 @@ function AddMovie() {
                 <MenuItem value="12">Space-Opera</MenuItem>
                 <MenuItem value="13">Superhero</MenuItem>
             </Select>
-
+        
             <Button
+                style={{margin: "16px"}}
                 variant="contained"
                 onClick={cancelAdd}
                 >Cancel
             </Button>
 
             <Button
+                style={{margin: "16px"}}
                 variant="contained"
                 type="submit">
                 Save
             </Button>
         </form>
+
+    </div>
     )
 }
 

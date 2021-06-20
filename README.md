@@ -8,13 +8,13 @@ I created an application that allows the user to view a gallery of movie posters
 
 ## Screen Shot
 
-![Home Page](/public/images/feedback1.png)
-![Feeling Page](/public/images/feedback2.png)
-![Understanding Page](/public/images/feedback3.png)
-![Support Page](/public/images/feedback4.png)
-![Comments Page](/public/images/feedback5.png)
-![Review Page](/public/images/feedback6.png)
-![Submit Page](/public/images/feedback7.png)
+![Home Page](/public/images/saga1.png)
+![Home Page 2](/public/images/saga2.png)
+![Details Page](/public/images/saga3.png)
+![Details Page 2](/public/images/saga4.png)
+![Add Movie Page](/public/images/saga5.png)
+![Add Movie Page 2](/public/images/saga6.png)
+![Home Page with Movie Added](/public/images/saga7.png)
 
 ### Prerequisites
 

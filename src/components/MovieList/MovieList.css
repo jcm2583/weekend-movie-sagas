@@ -3,7 +3,7 @@
     border-color: #ffffff;
 }
 
-h1 span {
+.span-class {
     background-color: black;
 }
 
@@ -24,6 +24,10 @@ h3 span {
 
 .spacing {
     margin: 64px 32px;
+}
+
+.title-spacing {
+    margin-top: 64px;
 }
 
 

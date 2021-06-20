@@ -30,9 +30,11 @@ function MovieList() {
 
     return (
         <main>
-            <h1><span>Welcome To The Gallery Of Movies</span></h1>
-            <h2><span>Click On A Movie To Learn More About It! No Spoilers!</span></h2>
-            <Button variant="contained"onClick={formPage}>Add Movie</Button>
+            <h1 className="title-spacing"><span className="span-class">Welcome To The Gallery Of Movies</span></h1>
+            <h2><span>Click On A Movie To Learn More About It!</span></h2>
+            <h2><span>Or Add Your Own!</span></h2>
+            <h2><span>BUT NO SPOILERS!!!</span></h2>
+            <Button style={{marginTop: "64px"}} variant="contained"onClick={formPage}>Add Movie</Button>
             <section className="movies">
                 {movies.map(movie => {
                     return (

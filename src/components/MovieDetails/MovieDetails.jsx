@@ -23,7 +23,7 @@ function MovieDetails() {
             {movies.map(movie => {
                 return (<div key={movie.id}>
                     <h3><span>{movie.title}</span></h3>
-                    <img class="border" src={movie.poster} alt={movie.title}></img>
+                    <img className="border" src={movie.poster} alt={movie.title}></img>
                     <h4><span>{movie.genre}</span></h4>
                     <p><span>{movie.description}</span></p>
                     <Button variant="contained" onClick={goBack}>Back to List</Button>
