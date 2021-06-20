@@ -28,13 +28,22 @@ function AddMovie() {
             title: movieTitle,
             poster: movieUrl,
             description: movieDescription,
-            name: movieGenre 
+            genre: movieGenre 
         }
         // dispatch object to saga
         dispatch({
             type: 'ADD_MOVIE',
             payload: movieObject
         });
+
+        //send user to home page
+        history.push('/');
+
+        //clear inputs
+        setMovieTitle('');
+        setMovieUrl('');
+        setMovieDescription('');
+        setMovieGenre('');
 
     }
 
@@ -80,7 +89,7 @@ function AddMovie() {
             <button onClick={cancelAdd}>Cancel</button>
             <button
                 type="submit">
-                Add Movie</button>
+                Save</button>
         </form>
     )
 }

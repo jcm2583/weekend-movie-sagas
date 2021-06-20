@@ -48,6 +48,7 @@ function* addMovie (action) {
     console.log(action.payload);
     try {
         yield axios.post('/api/movie', action.payload);
+        yield put ({type: 'FETCH_MOVIES'})
     } catch (err) {
         console.log('There was an error in addMovie', err);
     };
