@@ -28,7 +28,7 @@ function AddMovie() {
             title: movieTitle,
             poster: movieUrl,
             description: movieDescription,
-            genre: movieGenre 
+            genre_id: movieGenre 
         }
         // dispatch object to saga
         dispatch({
@@ -69,21 +69,21 @@ function AddMovie() {
                 value={movieDescription} />
 
             <label htmlFor="genres">Movie Genre:</label>
-            <select name="genres" onChange={(evt) => setMovieGenre(evt.target.value)}>
+            <select name="genre_id" onChange={(evt) => setMovieGenre(evt.target.value)}>
                 <option value="" disabled selected>Genres</option>
-                <option value="Adventure">Adventure</option>
-                <option value="Animated">Animated</option>
-                <option value="Biographical">Biographical</option>
-                <option value="Comedy">Comedy</option>
-                <option value="Disaster">Disaster</option>
-                <option value="Drama">Drama</option>
-                <option value="Epic">Epic</option>
-                <option value="Fantasy">Fantasy</option>
-                <option value="Musical">Musical</option>
-                <option value="Romantic">Romantic</option>
-                <option value="Science Fiction">Science Fiction</option>
-                <option value="Space-Opera">Space-Opera</option>
-                <option value="Superhero">Superhero</option>
+                <option value="1">Adventure</option>
+                <option value="2">Animated</option>
+                <option value="3">Biographical</option>
+                <option value="4">Comedy</option>
+                <option value="5">Disaster</option>
+                <option value="6">Drama</option>
+                <option value="7">Epic</option>
+                <option value="8">Fantasy</option>
+                <option value="9">Musical</option>
+                <option value="10">Romantic</option>
+                <option value="11">Science Fiction</option>
+                <option value="12">Space-Opera</option>
+                <option value="13">Superhero</option>
             </select>
 
             <button onClick={cancelAdd}>Cancel</button>
