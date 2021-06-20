@@ -23,17 +23,20 @@ function AddMovie() {
     //create a function that captures user input
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log('hi submit');
+        //create an object to send to saga
         let movieObject = {
             title: movieTitle,
             poster: movieUrl,
-            description: movieDescription
+            description: movieDescription,
+            name: movieGenre 
         }
-        console.log(movieObject);
+        // dispatch object to saga
+        dispatch({
+            type: 'ADD_MOVIE',
+            payload: movieObject
+        });
 
     }
-
-    console.log(movieGenre);
 
     return (
         <form onSubmit={handleSubmit}>
@@ -57,7 +60,7 @@ function AddMovie() {
                 value={movieDescription} />
 
             <label htmlFor="genres">Movie Genre:</label>
-            <select name="genres">
+            <select name="genres" onChange={(evt) => setMovieGenre(evt.target.value)}>
                 <option value="" disabled selected>Genres</option>
                 <option value="Adventure">Adventure</option>
                 <option value="Animated">Animated</option>

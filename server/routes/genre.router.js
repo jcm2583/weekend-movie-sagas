@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/:id', (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
 
   // create a query text variable to declare what data you want from database
   const queryText = `SELECT "movies".id, "movies".title, "movies".poster, "movies".description, 
