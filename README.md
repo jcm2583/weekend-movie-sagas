@@ -6,6 +6,8 @@ _Duration: Weekend Challenge_
 
 I created an application that allows the user to view a gallery of movie posters that will show additional information about that movie when clicked on. The user also has the ability to add movies of their choosing that will then show on the home page gallery. Some parts of the application were already provided including a database with multiple tables that were populated with movie data and server side post routes. My tasks were to connect the pre-existing database with the client to display a gallery of movies, create a new component that displays and pulls data about a movie if the user clicks on that poster, add a form that allows the user to create a movie entry whose data is stored in the database, and add styling using Material UI.
 
+Live version deployed on Heroku at: [https://weekend-movies-saga.herokuapp.com/](https://weekend-movies-saga.herokuapp.com/)
+
 ## Screen Shot
 
 ![Home Page](/public/images/saga1.png)
@@ -58,7 +60,7 @@ I created an application that allows the user to view a gallery of movie posters
 - CSS
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equiped and helped me make this application a reality.
+Thanks to [Prime Digital Academy](https://www.primeacademy.io) who equiped and helped me make this application a reality.
 
 ## Support
-If you have suggestions or issues, please email me at [jmotes2583@gmail.com](www.google.com)
+If you have suggestions or issues, please email me at [jmotes2583@gmail.com](mailto:jmotes2583@gmail.com)
